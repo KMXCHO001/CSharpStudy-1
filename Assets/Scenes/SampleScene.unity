@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -268,10 +268,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC774\uB984\uC744 \uCD94\uAC00(add: a + space)\n\uBA85\uB2E8\uC5D0\uC11C
-    \uC0AD\uC81C(delete: d + space)\n\uC804\uCCB4 \uD559\uC0DD \uBA85\uB2E8\uC744
-    \uCD9C\uB825(show: s + space)\n\uD559\uC0DD \uC704\uCE58 \uD655\uC778(check:
-    c + space)"
+  m_Text: "\uC120\uC218\uC744 \uCD94\uAC00(add: a + space)\n\uBA85\uB2E8\uC5D0\uC11C
+    \uC0AD\uC81C(delete: d + space)\n\uC120\uBC1C \uBA85\uB2E8\uC744 \uCD9C\uB825(show:
+    s + space)\n\uC120\uC218 \uC704\uCE58 \uD655\uC778(check: c + space)"
 --- !u!222 &156358534
 CanvasRenderer:
   m_ObjectHideFlags: 0
