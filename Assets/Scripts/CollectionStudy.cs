@@ -106,7 +106,7 @@ public class CollectionStudy : MonoBehaviour
                 {
                     string value = input.text;
 
-                    output.text = value + "이 추가되었습니다.\n";
+                    output.text = value + "이(가) 추가되었습니다.\n";
 
                     names.Add(value);
                 }
