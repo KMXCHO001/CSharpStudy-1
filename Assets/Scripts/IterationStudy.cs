@@ -1,69 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class IterationStudy : MonoBehaviour
 {
-    //for
-    //foreach
-    string[] names = { "신태욱", "김형민", "김현수" };
-    // Start is called before the first frame update
+    [SerializeField] TMP_Dropdown interestOption;
+    [SerializeField] TMP_InputField balanceInput;
+    [SerializeField] TMP_InputField interestRateInput;
+    [SerializeField] TMP_InputField yearInput;
+    [SerializeField] TMP_Text logtext;
+    
+    
+    
     void Start()
     {
-       /* //1. 초기화 2. 조건 3. 증감
-        for (int i = 0; i < 10; i++)
-        {
-            print(i);
-        }
-        // 0 ~ 배열의 길이까지 반복
-        for (int i = 0; i < names.Length; i++)
-        {
-            print(names[i]);
-
-        }
-
-        for (int i = names.Length - 1; i >= 0; i--)
-        {
-            print(names[i]);
-        }
-
-        for (int i = 0; i < 10; i++)
-        {
-            if (i % 2 == 0)
-                print(i);
-        }
-        // 조건을 입력할 필요가 없음
-        foreach (string name in names)
-            print(name);
-
-        //while
-        int number = 0;
-        while (number < 10)
-        {
-            number++;
-        }
-
-        while (true)
-        {
-            if (number == 10)
-            {
-                break; //반복문 종료
-            }
-        }
-
-        //do while
-        int num = 0;
-        do
-        {
-            print(num);
-            num++;
-
-        }
-        while (num < 10);*/
+       print(interestOption.value);
 
     }
 
-    // Update is called once per frame
+    public enum Options
+    {
+        Simple, Compound, SimpleMonthly, CompoundMonthly
+    }
+
+    public void OnCalBtnClkEvent()
+    {
+        float balance = float.Parse(balanceInput.text);
+        float interesteRate = float.Parse(interestRateInput.text);
+        int year = int.Parse(yearInput.text);
+        float result = 0;
+        float newInterest = 0;
+        float amount = 0;
+
+        switch (interestOption.value)
+        {
+            case (int)Options.Simple:
+                for (int i = 0; i < year; i++)
+                {
+                    result = balance +(balance * interesteRate / 100);
+                }
+                break;
+
+            case (int)Options.Compound:
+                for (int i = 0;i < year; i++)
+                {
+                    result += balance + balance * (interesteRate / 100);
+                }
+                result += balance + newInterest;
+                amount = result;
+                break;
+                logtext.text += $"{i + 1}년 차/{balance}원/{newInterest}원/{result}원|n";
+        }
+
+        
+
+    }
+
+    
     void Update()
     {
         
